@@ -3,6 +3,7 @@ package com.universidad.servicios.implementaciones;
 import com.universidad.modelo.entidades.Carrera;
 import com.universidad.repositorios.CarreraRepository;
 import com.universidad.servicios.contratos.CarreraDAO;
+import com.universidad.servicios.contratos.GenericDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,32 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
-public class CarreraDAOImpl implements CarreraDAO {
+public class CarreraDAOImpl extends GenericDAOImpl<Carrera,CarreraRepository> implements CarreraDAO {
 
     @Autowired
-    private CarreraRepository repo;
-
-    @Override
-    @Transactional(readOnly = true)
-    public Optional<Carrera> findById(Integer id) {
-        return Optional.ofNullable(repo.findById(id)).orElse(null);
+    public CarreraDAOImpl(CarreraRepository repository) {
+        super(repository);
     }
 
-    @Override
-    @Transactional
-    public Carrera save(Carrera carrera) {
-        return repo.save(carrera);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Iterable<Carrera> findAll() {
-        return repo.findAll();
-    }
-
-    @Override
-    @Transactional
-    public void delete(Integer id) {
-        repo.deleteById(id);
-    }
 }

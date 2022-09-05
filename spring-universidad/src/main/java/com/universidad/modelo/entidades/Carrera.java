@@ -117,8 +117,6 @@ public class Carrera implements Serializable {
                 ", cantidadAnios=" + cantidadAnios +
                 ", fechaAlta=" + fechaAlta +
                 ", fechaModificada=" + fechaModificada +
-                ", profesores=" + profesores +
-                ", alumnos=" + alumnos +
                 '}';
     }
 

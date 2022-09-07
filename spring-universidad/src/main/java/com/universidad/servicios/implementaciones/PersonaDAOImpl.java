@@ -3,6 +3,7 @@ package com.universidad.servicios.implementaciones;
 import com.universidad.modelo.entidades.Persona;
 import com.universidad.repositorios.PersonaRespository;
 import com.universidad.servicios.contratos.PersonaDAO;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -13,17 +14,20 @@ public class PersonaDAOImpl extends GenericDAOImpl<Persona, PersonaRespository> 
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<Persona> buscarPorNombreYApellido(String nombre, String apellido) {
-        return Optional.empty();
+        return repository.findByNombreAndApellido(nombre,apellido);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<Persona> buscarPorDni(String dni) {
-        return Optional.empty();
+        return repository.findByDni(dni);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<Persona> buscarPersonaPorApellido(String apellido) {
-        return Optional.empty();
+        return repository.buscarPersonaPorApellido(apellido);
     }
 }

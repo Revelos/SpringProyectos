@@ -4,15 +4,9 @@ import com.universidad.modelo.entidades.Carrera;
 import java.util.Optional;
 
 public interface CarreraDAO extends GenericDAO<Carrera>{
-    @Override
-    Optional<Carrera> findById(Integer id);
+    Iterable<Carrera> findCarreraByNombreContains(String nombre);
+    Iterable<Carrera> findCarreraByNombreContainsIgnoreCase(String nombre);
+    Iterable<Carrera> findCarreraByCantidadAniosAfter(Integer cantidadAnios);
 
-    @Override
-    Carrera save(Carrera carrera);
-
-    @Override
-    Iterable<Carrera> findAll();
-
-    @Override
-    void deleteById(Integer id);
+    Iterable<Carrera> buscarCarrerasPorProfesorNombreYApellido(String nombre, String apellido);
 }

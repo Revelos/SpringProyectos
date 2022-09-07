@@ -1,5 +1,9 @@
 package com.universidad.modelo.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -29,8 +33,11 @@ public class Carrera implements Serializable {
     @Column(name = "fecha_modificacion")
     private LocalDateTime fechaModificada;
 
+    @JsonIgnoreProperties({"carreras"})
     @ManyToMany(mappedBy = "carreras",fetch = FetchType.LAZY)
     private Set<Profesor> profesores;
+
+    @JsonIgnoreProperties({"carrera"})
     @OneToMany(mappedBy = "carrera",fetch = FetchType.LAZY)
     private Set<Alumno> alumnos;
 
@@ -100,6 +107,7 @@ public class Carrera implements Serializable {
         this.profesores = profesores;
     }
 
+    //@JsonManagedReference
     public Set<Alumno> getAlumnos() {
         return alumnos;
     }

@@ -1,5 +1,7 @@
 package com.universidad.modelo.entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -19,6 +21,7 @@ public class Alumno extends Persona   {
         super(id, nombre, apellido, dni, direccion);
     }
 
+    //@JsonBackReference
     public Carrera getCarrera() {
         return carrera;
     }

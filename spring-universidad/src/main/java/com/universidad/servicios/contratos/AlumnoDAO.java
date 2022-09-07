@@ -7,5 +7,7 @@ import java.util.Optional;
 
 public interface AlumnoDAO extends PersonaDAO{
 
+    Iterable<Persona> buscarAlumnosPorNombreCarrera(String nombre);
+
 
 }

@@ -1,6 +1,8 @@
 package com.universidad.modelo.entidades;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,6 +14,7 @@ public class Alumno extends Persona   {
 
     @ManyToOne(optional = true,fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "carrera_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer"})
     private Carrera carrera;
 
     public Alumno() {

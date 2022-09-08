@@ -12,6 +12,10 @@ public interface AlumnoRepository extends PersonaRespository{
 
     List<Alumno> findByNombre(String nombre);
 
+    @Override
+    @Query("select p from Alumno p inner join Persona a on p.id=a.id")
+    Iterable<Persona> findAll();
+
     @Query("select a from Alumno  a join fetch a.carrera c where a.carrera.nombre=?1")
     Iterable<Persona> buscarAlumnoPorCarrera(String nombre);
 }

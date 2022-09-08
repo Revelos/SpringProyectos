@@ -1,6 +1,8 @@
 package com.universidad.modelo.entidades;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Set;
@@ -15,6 +17,7 @@ public class Profesor extends Persona{
 
     @ManyToMany(fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(name = "profesor_carrera",joinColumns = @JoinColumn(name = "profesor_id"),inverseJoinColumns = @JoinColumn(name = "carrera_id"))
+    @JsonIgnoreProperties({"hibernateLazyInitializer"})
     private Set<Carrera> carreras;
 
 

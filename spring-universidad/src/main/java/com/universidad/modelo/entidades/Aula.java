@@ -43,7 +43,7 @@ public class Aula implements Serializable {
     public Aula() {
     }
 
-    public Aula(Integer id, Integer nroAula, String medidas, Integer cantidad, Pizarron pizarron, LocalDateTime fechaAlta, LocalDateTime fechaModificada) {
+    public Aula(Integer id, Integer nroAula, String medidas, Integer cantidad, Pizarron pizarron) {
         this.id = id;
         this.nroAula = nroAula;
         this.medidas = medidas;

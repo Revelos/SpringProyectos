@@ -39,6 +39,8 @@ public class Pabellon implements Serializable {
     public Pabellon() {
     }
 
+
+
     public Pabellon(Integer id, Double mts2, String nombre, Direccion direccion) {
         this.id = id;
         this.mts2 = mts2;

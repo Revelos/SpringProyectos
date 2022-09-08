@@ -6,6 +6,8 @@ import com.universidad.repositorios.AulaRepository;
 import com.universidad.servicios.contratos.AulaDAO;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AulaDAOImpl extends GenericDAOImpl<Aula, AulaRepository> implements AulaDAO {
     public AulaDAOImpl(AulaRepository repository) {
@@ -15,5 +17,10 @@ public class AulaDAOImpl extends GenericDAOImpl<Aula, AulaRepository> implements
     @Override
     public Iterable<Aula> findAulaByPizarron(Pizarron pizarron) {
         return repository.findAulaByPizarron(pizarron);
+    }
+
+    @Override
+    public Optional<Aula> findByNroAula(Integer nroAula) {
+        return repository.findByNroAula(nroAula);
     }
 }

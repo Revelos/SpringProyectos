@@ -47,7 +47,9 @@ public class ProfesorCommand implements CommandLineRunner {
         //Iterable<Persona> profesor = servicio.findAll();
 
 
-       // Iterable<Persona> profesor = ((ProfesorDAO)servicio).findProfesoresByCarrera("Ingeneria en Sistemas ");
+        /*EJERCICIO 1*/
+        //Iterable<Persona> profesor = ((ProfesorDAO)servicio).findProfesoresByCarrera("Ingeneria Industrial ");
+
         //profesor.forEach(perso -> System.out.println(perso));
 
     }

@@ -32,7 +32,9 @@ public class EmpleadoCommand implements CommandLineRunner {
         //System.out.println(p);*/
 
 
-        //System.out.println(((EmpleadoDAO)servicio).findEmpleadoByTipoEmpleado(TipoEmplado.MAMTENIMIENTO));
+        //EJERCICIO 2
+        System.out.println(((EmpleadoDAO)servicio).findEmpleadoByTipoEmpleado(TipoEmplado.ADMINITRATIVO));
+
 
     }
 }

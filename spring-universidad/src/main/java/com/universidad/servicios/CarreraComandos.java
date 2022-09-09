@@ -42,6 +42,8 @@ public class CarreraComandos implements CommandLineRunner {
         List<Carrera> carrerasIgnore = (List<Carrera>) servicio.findCarreraByCantidadAniosAfter(5);
         carrerasIgnore.forEach(System.out::println);*/
 
+        //EJERCICIO 3
+
         //Iterable<Carrera> c = servicio.buscarCarrerasPorProfesorNombreYApellido("Henry","Nuñez");
         //c.forEach(System.out::println);
 

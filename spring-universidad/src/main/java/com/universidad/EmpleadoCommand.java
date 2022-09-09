@@ -31,7 +31,7 @@ public class EmpleadoCommand implements CommandLineRunner {
         Persona p = servicio.save(persona);
         //System.out.println(p);
 
-
+        //EJERCICIO 2
         System.out.println(((EmpleadoDAO)servicio).findEmpleadoByTipoEmpleado(TipoEmplado.ADMINITRATIVO));*/
 
     }

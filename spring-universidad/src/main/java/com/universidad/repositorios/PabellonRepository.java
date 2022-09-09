@@ -7,5 +7,5 @@ public interface PabellonRepository extends CrudRepository<Pabellon,Integer> {
 
     Iterable<Pabellon> findByDireccionLocalidad(String localidad);
 
-    Iterable<Pabellon> findByNombre(String nombre);
+    Iterable<Pabellon> findByNombreIgnoreCase(String nombre);
 }

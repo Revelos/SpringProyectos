@@ -16,18 +16,17 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/alumno")
-public class AlumnoController {
-
-    private final PersonaDAO alumnoDAO;
+public class AlumnoController extends PersonaController{
 
     private final CarreraDAO carreraDAO;
 
     @Autowired
     public AlumnoController(@Qualifier("alumnoDAOImpl")PersonaDAO alumnoDAO, CarreraDAO carreraDAO) {
-        this.alumnoDAO = alumnoDAO;
+        super(alumnoDAO);
         this.carreraDAO = carreraDAO;
+        super.nombreEntidad="Alumno";
     }
-    @GetMapping
+   /* @GetMapping
     public List<Persona> obtenerTodos(){
         List<Persona> carreras = (List<Persona>) ((AlumnoDAO)alumnoDAO).findAll();
         if(carreras.isEmpty()){
@@ -67,12 +66,12 @@ public class AlumnoController {
     @DeleteMapping(value = "/{id}")
     public void eliminarCarrera(@PathVariable Integer id){
         alumnoDAO.deleteById(id);
-    }
+    }*/
 
 
     @PutMapping("/{idAlumno}/carrera/{idCarrera}")
     public Persona asignarCarreraAlumno(@PathVariable Integer idAlumno,@PathVariable Integer idCarrera){
-        Optional<Persona> oAlumno = alumnoDAO.findById(idAlumno);
+        Optional<Persona> oAlumno = service.findById(idAlumno);
         if(!oAlumno.isPresent()){
             throw  new BadRequestException(String.format("El alumno con id %d no existe",idAlumno));
         }
@@ -83,6 +82,6 @@ public class AlumnoController {
         Persona alumno = oAlumno.get();
         Carrera carrera = oCarrera.get();
         ((Alumno)alumno).setCarrera(carrera);
-        return alumnoDAO.save(alumno);
+        return service.save(alumno);
     }
 }

@@ -21,6 +21,6 @@ public class PabellonDAOImpl extends GenericDAOImpl<Pabellon, PabellonRepository
 
     @Override
     public Iterable<Pabellon> findByNombre(String nombre) {
-        return repository.findByNombre(nombre);
+        return repository.findByNombreIgnoreCase(nombre);
     }
 }

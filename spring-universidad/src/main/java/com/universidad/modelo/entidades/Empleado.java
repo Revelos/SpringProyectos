@@ -45,6 +45,14 @@ public class Empleado extends Persona{
         this.tipoEmplado = tipoEmplado;
     }
 
+    public Pabellon getPabellon() {
+        return pabellon;
+    }
+
+    public void setPabellon(Pabellon pabellon) {
+        this.pabellon = pabellon;
+    }
+
     @Override
     public String toString() {
         return "Empleado{" +

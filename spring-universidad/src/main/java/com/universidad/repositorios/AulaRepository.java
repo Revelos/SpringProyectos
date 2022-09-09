@@ -11,5 +11,7 @@ public interface AulaRepository extends CrudRepository<Aula, Integer> {
 
     Iterable<Aula> findAulaByPizarron(Pizarron pizarron);
 
+    Iterable<Aula> findAulaByPabellon_Nombre(String pabellon);
+
     Optional<Aula> findByNroAula(Integer nroAula);
 }

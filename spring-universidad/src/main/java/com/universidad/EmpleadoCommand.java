@@ -25,14 +25,14 @@ public class EmpleadoCommand implements CommandLineRunner {
 
         /*Direccion direccion = new Direccion("calle pte","23","123-8","San Salvador","6","3");
 
-        Persona persona = new Empleado(null,"Veronica","Mendez","23456-9", direccion,new BigDecimal(1000.56), TipoEmplado.ADMINITRATIVO);
+        Persona persona = new Empleado(null,"Carlos","Martinez","897621-3", direccion,new BigDecimal(1000.56), TipoEmplado.MAMTENIMIENTO);
 
 
-        Persona p = servicio.save(persona);
-        //System.out.println(p);
+        Persona p = servicio.save(persona);*/
+        //System.out.println(p);*/
 
 
-        System.out.println(((EmpleadoDAO)servicio).findEmpleadoByTipoEmpleado(TipoEmplado.ADMINITRATIVO));*/
+        //System.out.println(((EmpleadoDAO)servicio).findEmpleadoByTipoEmpleado(TipoEmplado.MAMTENIMIENTO));
 
     }
 }

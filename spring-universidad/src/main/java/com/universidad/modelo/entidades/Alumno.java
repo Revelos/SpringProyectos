@@ -14,7 +14,7 @@ public class Alumno extends Persona   {
 
     @ManyToOne(optional = true,fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "carrera_id")
-    @JsonIgnoreProperties({"hibernateLazyInitializer"})
+    @JsonIgnoreProperties({"hibernateLazyInitializer","profesores","alumnos"})
     private Carrera carrera;
 
     public Alumno() {

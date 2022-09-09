@@ -17,17 +17,20 @@ public class AulaCommand implements CommandLineRunner {
     private AulaDAO servicio;
     @Override
     public void run(String... args) throws Exception {
-        /*Aula aula = new Aula(null,4,"12x12",13, Pizarron.PIZARRA_TIZA);
+        /*Aula aula = new Aula(null,5,"24x12",13, Pizarron.PIZARRA_BLANCA);
         System.out.println(servicio.save(aula));*/
 
         /*Iterable<Aula> aulas = servicio.findAll();
         aulas.forEach(System.out::println);*/
 
-        /*Iterable<Aula> aulasFiltro= servicio.findAulaByPizarron(Pizarron.PIZARRA_BLANCA);
+        /*Iterable<Aula> aulasFiltro= servicio.findAulaByPizarron(Pizarron.PIZARRA_TIZA);
         aulasFiltro.forEach(System.out::println);*/
 
-        /*Optional<Aula> aulasNroAula= servicio.findByNroAula(4);
+        /*Optional<Aula> aulasNroAula= servicio.findByNroAula(6);
         aulasNroAula.map(aula -> System.out.printf(aula.toString()));*/
+
+         Iterable<Aula> aulasFiltro= servicio.findAulaByPabellonNombre("Pabellon 5");
+        aulasFiltro.forEach(System.out::println);
 
     }
 }
